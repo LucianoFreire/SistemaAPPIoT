@@ -10,8 +10,8 @@ angular.module("sistemaappiot").config(["$routeProvider", function ($routeProvid
     });
 
     $routeProvider.when("/agendamentos", {
-        templateUrl: "view/agendamentos.html",
-        controller: "agendamentosController"
+        templateUrl: "view/agendamentos.html"
+       // controller: "novosAgendamentos"
     });
 
     $routeProvider.when("/novosAgendamentos", {
