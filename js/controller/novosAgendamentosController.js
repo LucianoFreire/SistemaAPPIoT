@@ -5,7 +5,7 @@
 angular.module("sistemaappiot").controller("novosAgendamentosController", function ($scope, $location) {
 
     $scope.novoAg = function (caminho) {
-
+        console.log(caminho);
         $location.url(caminho);
     };
 
