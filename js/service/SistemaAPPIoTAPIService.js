@@ -1,3 +1,37 @@
-/**
- * Created by LucianoFreire on 03/05/2017.
- */
+angular.module("sistemaappiot").factory("sistemaApi",function($http){
+	var _listaAgenda =function (){
+		return $http({
+			method:"GET",
+			url:"http://localhost:8084/Crudd/produto"
+		});
+	}
+	var _salvar = function (agenda) {
+        return $http({
+            method:"POST",
+            url:"http://localhost:8084/Crudd/produto",
+            data:agenda
+        })
+    };
+    var _editar = function (agenda) {
+        return $http({
+            method:"PUT",
+            url:"http://localhost:8084/Crudd/produto",
+            data:agenda
+        })
+    };
+    var _dell = function (id) {
+        return $http({
+            method:"DELETE",
+            url:"http://localhost:8084/Crudd/produto/"+id,
+        })
+    };
+
+	return{
+		listAgenda: _listaAgenda,
+		salvar: _salvar,
+		editar: _editar,
+		dell: _dell
+
+	}
+
+});
