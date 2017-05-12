@@ -20,5 +20,14 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 			});
 		}
 	}
+	$scope.put = function(agenda){
+		sistemaApi.editar(agenda).then(function(dados){
+			alert("Alterado com sucesso");
+			listaAgenda();
+		},function(err){
+			alert("Erro na edicao");
+		})
+
+	}
 	listaAgenda();
 });
