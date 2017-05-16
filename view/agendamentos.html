@@ -6,7 +6,7 @@
 <br>
 <div class="row">
     <div class="col-md-2">
-        <button class="btn btn-info btn-lg" ng-click="novoAg('/novosAgendamentos')">
+        <button class="btn btn-info btn-lg" ng-click="novoAg()">
             <span class="glyphicon glyphicon-plus-sign"></span>
             NOVO AGENDAMENTO
         </button>
@@ -32,22 +32,21 @@
     </tr>
     </thead>
 
-    <tbody>
+    <tbody ng-repeat="list in lista">
     <!--LINHA 1-->
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button class="btn btn-default btn-lg" role="button"><span class="glyphicon glyphicon-pencil"></span></button></td>
-        <td><button class="btn btn-default btn-lg" role="button"><span class="glyphicon glyphicon-floppy-remove"></span></button></td>
+    <tr >
+        <td>{{list.data}}</td>
+        <td>{{list.hora}}</td>
+        <td>{{list.EstadoVentilador}}</td>
+        <td>{{list.EstadoLuzSala}}</td>
+        <td>{{list.EstadoTelevisor}}</td>
+        <td>{{list.EstadoLuzQuarto}}</td>
+        <td><button class="btn btn-default btn-lg" role="button" ng-click="edit()"><span class="glyphicon glyphicon-pencil"></span></button></td>
+        <td><button class="btn btn-default btn-lg" role="button" ng-click="delet(list.id)"><span class="glyphicon glyphicon-floppy-remove"></span></button></td>
     </tr>
 
     </tbody>
 </table>
-
 
 
 

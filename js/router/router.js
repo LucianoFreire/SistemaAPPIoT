@@ -1,7 +1,3 @@
-/**
- * Created by LucianoFreire on 03/05/2017.
- */
-
 
 angular.module("sistemaappiot").config(["$routeProvider", function ($routeProvider) {
 
@@ -10,8 +6,8 @@ angular.module("sistemaappiot").config(["$routeProvider", function ($routeProvid
     });
 
     $routeProvider.when("/agendamentos", {
-        templateUrl: "view/agendamentos.html"
-       // controller: "novosAgendamentos"
+        templateUrl: "view/agendamentos.html",
+        controller: "agendaController"
     });
 
     $routeProvider.when("/novosAgendamentos", {

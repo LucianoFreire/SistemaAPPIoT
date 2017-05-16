@@ -1,53 +1,72 @@
 <div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="page-header">
             <h2><b>NOVOS AGENDAMENTOS</b></h2>
         </div>
     </div>
     <br>
-
-    <div class="well">
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="ex2">Data</label>
-                <input class="form-control" id="ex2" type="text">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-xs-3">
-                <label for="ex3">Hora</label>
-                <input class="form-control" id="ex3" type="text">
-            </div>
-        </div>
-        <br>
-
-        <div>
-            <label> TV : </label>
-            <label class="radio-inline"><input type="radio" name="optradio">Ligado</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Desligado</label>
-        </div>
-        <br>
-
-        <div>
-            <label> VENTILADOR : </label>
-            <label class="radio-inline"><input type="radio" name="optradio">Ligado</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Desligado</label>
-        </div>
-        <br>
-
-        <div>
-            <label> LUZ DA SALA : </label>
-            <label class="radio-inline"><input type="radio" name="optradio">Ligado</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Desligado</label>
-        </div>
-        <br>
-        <div>
-            <label> LUZ DO QUARTO : </label>
-            <label class="radio-inline"><input type="radio" name="optradio">Ligado</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Desligado</label>
-        </div>
+    <div ng-repeat="al in alertas">
+        <div class="alert alert-danger"> {{al}}</div>
     </div>
-    <button class="btn btn-default btn-block">AGENDAR</button>
+    <div class="row">
+    <div class="col-xs-3">
+        
+    </div>
+    <div class="col-xs-6 text-center">
+            <form>
+                <div class="well">
+                    <div class="form-group col-xs-6" style="margin-left: 150px;">
+                        <label class="labelx">Data / Horario</label>
+                            <div class="input-group">
+                            <span class="input-group-btn">
+                                <div class="btn-group dropup">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="glyphicon glyphicon-calendar"
+                                        aria-hidden="true"></span>
+                                    </button>
+                                <ul class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()"
+                                    style="min-width: 200px;">
+                                    <div date-picker="start" max-view="month" min-view="minutes"
+                                         class="ng-isolate-scope" ng-model="data"></div>
+                                </ul>
+                            </div>
+                        </span>
+
+                        <input date-time format="DD/MM/YYYY HH:mm" ng-model="data" ng-readonly="true" class="form-control" disabled ng-required="true" name="data" >
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group col-xs-12">
+                        <label> TV : </label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoTelevisor" value="Ligado">Ligado</label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoTelevisor" value="Desligado" >Desligado</label>
+                    </div>
+                    <br>
+
+                    <div class="form-group col-xs-12">
+                        <label> VENTILADOR : </label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoVentilador" value="Ligado">Ligado</label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoVentilador" value="Desligado">Desligado</label>
+                    </div>
+                    <br>
+
+                    <div class="form-group ">
+                        <label> LUZ DA SALA : </label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Ligado">Ligado</label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Desligado">Desligado</label>
+                    </div>
+                    <div class="form-group ">
+                        <label> LUZ DO QUARTO : </label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Ligado">Ligado</label>
+                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Desligado">Desligado</label>
+                    </div>
+                </div>
+                <button class="btn btn-default btn-block" ng-click="salvar(estado)">AGENDAR</button>
+            </form>
+        </div>
+    
+    </div>
 </div>
 
 
