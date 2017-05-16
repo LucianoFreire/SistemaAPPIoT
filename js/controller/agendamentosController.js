@@ -2,7 +2,7 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 	$scope.lista = [];
 	$scope.novoAg = function(){
 		$location.url('/novosAgendamentos');
-	}
+	};
 	var listaAgenda = function(){
 		sistemaApi.listAgenda().then(function(dados){
 			$scope.lista = dados.data;
@@ -19,7 +19,7 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 				alert("Erro ao excluir: "+err);
 			});
 		}
-	}
+	};
 	$scope.put = function(agenda){
 		sistemaApi.editar(agenda).then(function(dados){
 			alert("Alterado com sucesso");
@@ -28,6 +28,6 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 			alert("Erro na edicao");
 		})
 
-	}
+	};
 	listaAgenda();
 });

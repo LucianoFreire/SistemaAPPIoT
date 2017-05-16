@@ -4,8 +4,8 @@ angular.module("sistemaappiot").factory("sistemaApi",function($http){
 			method:"GET",
 			url:"http://localhost:8084/Crudd/produto"
 		});
-	}
-	var _salvar = function (agenda) {
+	};
+	var _salvarAgenda = function (agenda) {
         return $http({
             method:"POST",
             url:"http://localhost:8084/Crudd/produto",
@@ -22,13 +22,13 @@ angular.module("sistemaappiot").factory("sistemaApi",function($http){
     var _dell = function (id) {
         return $http({
             method:"DELETE",
-            url:"http://localhost:8084/Crudd/produto/"+id,
+            url:"http://localhost:8084/Crudd/produto/"+id
         })
     };
 
 	return{
 		listAgenda: _listaAgenda,
-		salvar: _salvar,
+		salvarAgenda: _salvarAgenda,
 		editar: _editar,
 		dell: _dell
 

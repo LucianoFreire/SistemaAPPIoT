@@ -4,7 +4,10 @@
 
 
 angular.module("sistemaappiot",
-    ["ngRoute"
+    [	"ngRoute",
+    	"ngMessages",
+   		"ngAnimate",
+   		"datePicker"
         //'angular-loading-bar',
         //'toastr'
     ]);
