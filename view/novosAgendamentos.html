@@ -1,3 +1,14 @@
+<style type="text/css">
+     .dir{
+        margin-left: 70px;
+    }
+    .qr{
+     margin-right: 20px;   
+    }
+    label{
+     margin-right: 30px;      
+    }
+</style>
 <div>
     <div class="container">
         <div class="page-header">
@@ -17,7 +28,7 @@
             <form>
                 <div class="well">
                     <div class="form-group col-xs-6" style="margin-left: 150px;">
-                        <label class="labelx">Data / Horario</label>
+                        <label >Data / Horario</label>
                             <div class="input-group">
                             <span class="input-group-btn">
                                 <div class="btn-group dropup">
@@ -40,7 +51,7 @@
 
                     <div class="form-group col-xs-12">
                         <label> TV : </label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoTelevisor" value="Ligado">Ligado</label>
+                        <label class="radio-inline dir"><input type="radio" ng-model="estado.EstadoTelevisor" value="Ligado">Ligado</label>
                         <label class="radio-inline"><input type="radio" ng-model="estado.EstadoTelevisor" value="Desligado" >Desligado</label>
                     </div>
                     <br>
@@ -57,7 +68,7 @@
                         <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Ligado">Ligado</label>
                         <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Desligado">Desligado</label>
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group qr">
                         <label> LUZ DO QUARTO : </label>
                         <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Ligado">Ligado</label>
                         <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Desligado">Desligado</label>
