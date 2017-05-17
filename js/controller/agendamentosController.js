@@ -11,8 +11,8 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 		});
 	};
 	$scope.delet = function(id){
-	var r = 	confirm("Sim");
-		if(r){
+	var opcao = 	confirm("Deseja Excluir?");
+		if(opcao){
 			sistemaApi.dell(id).then(function(dados){
 				listaAgenda();
 			},function(err){

@@ -21,8 +21,7 @@
     <thead>
     <!--CALUNAS-->
     <tr>
-        <th>DATA</th>
-        <th>HORÁRIO</th>
+        <th>DATA & Hora</th>
         <th>VENTILADOR</th>
         <th>LUZ SALA</th>
         <th>TV</th>
@@ -35,8 +34,7 @@
     <tbody ng-repeat="list in lista">
     <!--LINHA 1-->
     <tr >
-        <td>{{list.data}}</td>
-        <td>{{list.hora}}</td>
+        <td>{{list.data_hora}}</td>
         <td>{{list.EstadoVentilador}}</td>
         <td>{{list.EstadoLuzSala}}</td>
         <td>{{list.EstadoTelevisor}}</td>

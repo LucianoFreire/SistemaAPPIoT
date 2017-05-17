@@ -5,14 +5,15 @@
         </div>
     </div>
     <br>
-    <div ng-repeat="al in alertas">
-        <div class="alert alert-danger"> {{al}}</div>
-    </div>
+   
     <div class="row">
     <div class="col-xs-3">
         
     </div>
     <div class="col-xs-6 text-center">
+         <div ng-repeat="al in alertas">
+            <div class="alert alert-danger"> {{al}}</div>
+        </div>
             <form>
                 <div class="well">
                     <div class="form-group col-xs-6" style="margin-left: 150px;">
@@ -32,7 +33,7 @@
                             </div>
                         </span>
 
-                        <input date-time format="DD/MM/YYYY HH:mm" ng-model="data" ng-readonly="true" class="form-control" disabled ng-required="true" name="data" >
+                        <input date-time format="DD/MM/YYYY HH:mm:ss" ng-model="data" ng-readonly="true" class="form-control" disabled ng-required="true" name="data" >
                         </div>
                     </div>
                     <br>
