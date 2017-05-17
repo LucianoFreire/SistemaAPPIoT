@@ -8,8 +8,7 @@ angular.module("sistemaappiot").controller("novosAgendamentosController", functi
     $scope.data = new Date();
 
     $scope.salvar = function (estado) {
-        $scope.estado.data = moment($scope.data).format("DD/MM/YYYY");
-        $scope.estado.hora = moment($scope.data).format("HH:MM:ss");
+        $scope.estado.data_hora = moment($scope.data).format("YYYY-MM-DD HH:mm:ss");
         $scope.estado = estado;
         if($scope.estado.EstadoTelevisor !=null && $scope.estado.EstadoVentilador !=null
             && $scope.estado.EstadoLuzQuarto != null && $scope.estado.EstadoLuzSala != null){
