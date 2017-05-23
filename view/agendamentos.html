@@ -1,13 +1,12 @@
 <div class="container-fluid">
     <div class="page-header">
-        <h2><b>AGENDAMENTOS</b></h2>
+        <span class="h2"><b>AGENDAMENTOS</b></span>
     </div>
 </div>
 <br>
 <div class="row">
     <div class="col-md-2">
         <button class="btn btn-info btn-lg" ng-click="novoAg()">
-            <span class="glyphicon glyphicon-plus-sign"></span>
             NOVO AGENDAMENTO
         </button>
     </div>
@@ -16,18 +15,18 @@
 
 <br>
 
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-bordered text-center">
 
-    <thead>
+    <thead >
     <!--CALUNAS-->
-    <tr>
-        <th>DATA & Hora</th>
-        <th>VENTILADOR</th>
-        <th>LUZ SALA</th>
-        <th>TV</th>
-        <th>LUZ QUARTO</th>
-        <th>EDITAR</th>
-        <th>REMOVER</th>
+    <tr >
+        <th class="text-center">DATA & Hora</th>
+        <th class="text-center">VENTILADOR</th>
+        <th class="text-center">LUZ SALA</th>
+        <th class="text-center">TV</th>
+        <th class="text-center">LUZ QUARTO</th>
+        <th class="text-center">EDITAR</th>
+        <th class="text-center">REMOVER</th>
     </tr>
     </thead>
 
@@ -39,8 +38,8 @@
         <td>{{list.EstadoLuzSala}}</td>
         <td>{{list.EstadoTelevisor}}</td>
         <td>{{list.EstadoLuzQuarto}}</td>
-        <td><button class="btn btn-default btn-lg" role="button" ng-click="edit()"><span class="glyphicon glyphicon-pencil"></span></button></td>
-        <td><button class="btn btn-default btn-lg" role="button" ng-click="delet(list.id)"><span class="glyphicon glyphicon-floppy-remove"></span></button></td>
+        <td ><button class="btn btn-default " role="button" ng-click="edit()"><span class="glyphicon glyphicon-pencil"></span></button></td>
+        <td ><button class="btn btn-default" role="button" ng-click="delet(list.id)"><span class="glyphicon glyphicon-floppy-remove"></span></button></td>
     </tr>
 
     </tbody>

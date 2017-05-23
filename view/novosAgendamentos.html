@@ -1,12 +1,12 @@
 <style type="text/css">
-     .dir{
-        margin-left: 70px;
-    }
+     .tv{
+        margin-left: 75px;   
+     }
     .qr{
      margin-right: 20px;   
     }
     label{
-     margin-right: 30px;      
+     margin-right: 120px;      
     }
 </style>
 <div>
@@ -22,11 +22,14 @@
         
     </div>
     <div class="col-xs-6 text-center">
-         <div ng-repeat="al in alertas">
-            <div class="alert alert-danger"> {{al}}</div>
+         <div ng-repeat="al in alertas"> <!-- formulario.$dirty  e $pristine -->
+            <div class="alert alert-danger alert-dismissable" id="danger-alert">
+                <a class="close" data-dismiss="alert" aria-label="close" ng-click="closeAlert($index)">×</a>
+                    {{al}}
+            </div>
         </div>
             <form>
-                <div class="well">
+                <div class="well ">
                     <div class="form-group col-xs-6" style="margin-left: 150px;">
                         <label >Data / Horario</label>
                             <div class="input-group">
@@ -51,30 +54,34 @@
 
                     <div class="form-group col-xs-12">
                         <label> TV : </label>
-                        <label class="radio-inline dir"><input type="radio" ng-model="estado.EstadoTelevisor" value="Ligado">Ligado</label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoTelevisor" value="Desligado" >Desligado</label>
+                        <div ng-repeat="opttv in userOptions" class="radio-inline tv">
+                            <input type="radio" name="tv" ng-model="estado.EstadoTelevisor" ng-value="opttv.id" id="{{opttv.id}}" required />{{opttv.text}} <span>&nbsp; &nbsp; &nbsp;</span> 
+                        </div>
                     </div>
                     <br>
 
                     <div class="form-group col-xs-12">
                         <label> VENTILADOR : </label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoVentilador" value="Ligado">Ligado</label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoVentilador" value="Desligado">Desligado</label>
+                        <div ng-repeat="ventilador in userOptions" class="radio-inline">
+                            <input type="radio" name="ventilador" ng-value="ventilador.id" ng-model="estado.EstadoVentilador" id="{{ventilador.id}}" required />{{ventilador.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+                        </div>
                     </div>
                     <br>
 
                     <div class="form-group ">
                         <label> LUZ DA SALA : </label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Ligado">Ligado</label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzSala" value="Desligado">Desligado</label>
+                        <div ng-repeat="sala in userOptions" class="radio-inline">  
+                            <input type="radio" name="sala" ng-model="estado.EstadoLuzSala" ng-value="sala.id" id="{{sala.id}}" required />{{sala.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+                        </div>
                     </div>
                     <div class="form-group qr">
                         <label> LUZ DO QUARTO : </label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Ligado">Ligado</label>
-                        <label class="radio-inline"><input type="radio" ng-model="estado.EstadoLuzQuarto" value="Desligado">Desligado</label>
+                    <div ng-repeat="quarto in userOptions" class="radio-inline">
+                        <input type="radio" name="luz" class="qr" ng-model="estado.EstadoLuzQuarto" ng-value="quarto.id" id="{{quarto.id}}" required />{{quarto.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-default btn-block" ng-click="salvar(estado)">AGENDAR</button>
+                <button class="btn btn-success btn-block" ng-click="salvar(estado)">AGENDAR</button>
             </form>
         </div>
     
