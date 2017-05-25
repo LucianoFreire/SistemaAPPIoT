@@ -1,0 +1,58 @@
+<div class="page-header">
+   	<h2><b>NOVOS AGENDAMENTOS</b></h2>
+</div>
+<div class="row">
+	<div class="col-xs-3">
+		
+	</div>
+	<div class="col-xs-6">
+		<form action="" >
+			<div class=" row well text-center">
+				<div class="col-xs-12">
+					<label >Data & Horario</label>
+	                <div class="input-group">
+		                <span class="input-group-btn">
+		                    <div class="btn-group dropup">
+		                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		                            <span class="glyphicon glyphicon-calendar"
+		                            aria-hidden="true"></span>
+		                        </button>
+		                    	<ul class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()"
+		                        style="min-width: 200px;">
+		                        <div date-picker="start" max-view="month" min-view="minutes"
+		                             class="ng-isolate-scope" ng-model="data"></div>
+		                    	</ul>
+		                	</div>
+		            	</span>
+						<input date-time format="DD/MM/YYYY HH:mm:ss" ng-model="data" ng-readonly="true" class="form-control" disabled ng-required="true" name="data" >
+	            	</div>
+				</div>
+				<div class="col-xs-12">
+					<label style="margin-right: 230px;"> TV : </label>
+	                <div ng-repeat="opttv in userOptions" class="radio-inline tv">
+	                    <input type="radio" name="tv" ng-model="estado.EstadoTelevisor" ng-value="opttv.id" id="{{opttv.id}}" required />{{opttv.text}} <span>&nbsp; &nbsp; &nbsp;</span> 
+	                </div>
+				</div>
+				<div class="col-xs-12">
+					<label style="margin-right: 160px;"> VENTILADOR : </label>
+	                <div ng-repeat="ventilador in userOptions" class="radio-inline">
+	                    <input type="radio" name="ventilador" ng-value="ventilador.id" ng-model="estado.EstadoVentilador" id="{{ventilador.id}}" required />{{ventilador.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                </div>
+				</div>
+				<div class="col-xs-12">
+					<label style="margin-right: 155px;"> LUZ DA SALA : </label>
+	                <div ng-repeat="sala in userOptions" class="radio-inline">  
+	                    <input type="radio" name="sala" ng-model="estado.EstadoLuzSala" ng-value="sala.id" id="{{sala.id}}" required />{{sala.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                </div>
+				</div>
+				<div class="col-xs-12">
+					<label style="margin-right: 130px;"> LUZ DO QUARTO : </label>
+	                <div ng-repeat="quarto in userOptions" class="radio-inline">
+	                    <input type="radio" name="luz" class="qr" ng-model="estado.EstadoLuzQuarto" ng-value="quarto.id" id="{{quarto.id}}" required />{{quarto.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                </div>
+				</div>
+			</div>
+			<button class="btn btn-success btn-block" ng-click="salvar(estado)">AGENDAR</button>
+		</form>
+	</div>
+</div>

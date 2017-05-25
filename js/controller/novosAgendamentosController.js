@@ -22,18 +22,14 @@ angular.module("sistemaappiot").controller("novosAgendamentosController", functi
                         $scope.alertas.push("Erro ao Cadastrar");
                     });
                 }else{
-                        $scope.alertas.push("Preencha os campos");
+                        $scope.alertas.push("Preencha Todos campos");
                 }
         }else{
             $scope.alertas.push("Data invalida! data deve ser maior que data ou a hora atual :D");
         }
     };
-    $scope.addAlert = function() {
-        $scope.alerts.push({msg: 'Another alert!'});
-  };
-
-    $scope.closeAlert = function(index) {
-        $scope.alertas.splice(index, 1);
-  };
+     $scope.closeAlert = function(index) {
+            $scope.alertas.splice(index, 1);
+      };
    
 });

@@ -1,21 +1,20 @@
-<div class="container-fluid">
-    <div class="page-header">
-        <span class="h2"><b>AGENDAMENTOS</b></span>
-    </div>
+<div class="page-header">
+    <span class="h2"><b>AGENDAMENTOS</b></span>
 </div>
 <br>
-<div class="row">
+<div class="row ">
     <div class="col-md-2">
         <button class="btn btn-info btn-lg" ng-click="novoAg()">
             NOVO AGENDAMENTO
         </button>
     </div>
-
 </div>
 
 <br>
-
-<table class="table table-striped table-hover table-bordered text-center">
+<div class="alert alert-warning" role="alert" ng-show="lista.length==0">
+    <strong>Tabela: </strong> Nenhum registro Cadastrado.
+</div>
+<table class="table table-striped table-hover table-bordered text-center" ng-show="lista.length>0">
 
     <thead >
     <!--CALUNAS-->
@@ -41,7 +40,6 @@
         <td ><button class="btn btn-default " role="button" ng-click="edit()"><span class="glyphicon glyphicon-pencil"></span></button></td>
         <td ><button class="btn btn-default" role="button" ng-click="delet(list.id)"><span class="glyphicon glyphicon-floppy-remove"></span></button></td>
     </tr>
-
     </tbody>
 </table>
 
