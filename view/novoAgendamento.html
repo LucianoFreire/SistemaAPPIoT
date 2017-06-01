@@ -30,25 +30,25 @@
 				<div class="col-xs-12">
 					<label style="margin-right: 230px;"> TV : </label>
 	                <div ng-repeat="opttv in userOptions" class="radio-inline tv">
-	                    <input type="radio" name="tv" ng-model="estado.EstadoTelevisor" ng-value="opttv.id" id="{{opttv.id}}" required />{{opttv.text}} <span>&nbsp; &nbsp; &nbsp;</span> 
+	                    <input type="radio" name="tv" ng-model="estado.estadoTelevisor" ng-value="opttv.id" id="{{opttv.id}}" required />{{opttv.text}} <span>&nbsp; &nbsp; &nbsp;</span> 
 	                </div>
 				</div>
 				<div class="col-xs-12">
 					<label style="margin-right: 160px;"> VENTILADOR : </label>
 	                <div ng-repeat="ventilador in userOptions" class="radio-inline">
-	                    <input type="radio" name="ventilador" ng-value="ventilador.id" ng-model="estado.EstadoVentilador" id="{{ventilador.id}}" required />{{ventilador.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                    <input type="radio" name="ventilador" ng-value="ventilador.id" ng-model="estado.estadoVentilador" id="{{ventilador.id}}" required />{{ventilador.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
 	                </div>
 				</div>
 				<div class="col-xs-12">
 					<label style="margin-right: 155px;"> LUZ DA SALA : </label>
 	                <div ng-repeat="sala in userOptions" class="radio-inline">  
-	                    <input type="radio" name="sala" ng-model="estado.EstadoLuzSala" ng-value="sala.id" id="{{sala.id}}" required />{{sala.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                    <input type="radio" name="sala" ng-model="estado.estadoLuzSala" ng-value="sala.id" id="{{sala.id}}" required />{{sala.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
 	                </div>
 				</div>
 				<div class="col-xs-12">
 					<label style="margin-right: 130px;"> LUZ DO QUARTO : </label>
 	                <div ng-repeat="quarto in userOptions" class="radio-inline">
-	                    <input type="radio" name="luz" class="qr" ng-model="estado.EstadoLuzQuarto" ng-value="quarto.id" id="{{quarto.id}}" required />{{quarto.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
+	                    <input type="radio" name="luz" class="qr" ng-model="estado.estadoLuzQuarto" ng-value="quarto.id" id="{{quarto.id}}" required />{{quarto.text}}<span>&nbsp; &nbsp; &nbsp;</span> 
 	                </div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-angular.module("sistemaappiot").controller("agendaController", function ($scope, sistemaApi,$location) {
+angular.module("sistemaappiot").controller("agendaController", function ($scope, sistemaApi,$location,$interval) {
 	$scope.lista = [];
 	$scope.novoAg = function(){
 		$location.url('/novosAgendamentos');
@@ -29,5 +29,15 @@ angular.module("sistemaappiot").controller("agendaController", function ($scope,
 		})
 
 	};
+	$scope.listar = true;
+
+
+	var lista = function(){
+		$interval(function(){
+			//alert('ola')
+			listaAgenda();
+		},60000,0);
+	};
+	lista();
 	listaAgenda();
 });

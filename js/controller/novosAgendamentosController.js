@@ -14,8 +14,8 @@ angular.module("sistemaappiot").controller("novosAgendamentosController", functi
         $scope.estado = estado;
         var data_atual = new Date();
         if($scope.data > data_atual){
-            if($scope.estado.EstadoTelevisor !=null && $scope.estado.EstadoVentilador !=null
-                    && $scope.estado.EstadoLuzQuarto != null && $scope.estado.EstadoLuzSala != null){
+            if($scope.estado.estadoTelevisor !=null && $scope.estado.estadoVentilador !=null
+                    && $scope.estado.estadoLuzQuarto != null && $scope.estado.estadoLuzSala != null){
                     sistemaApi.salvarAgenda($scope.estado).then(function (dados) {
                         $scope.novoAg();
                     }, function (err) {
